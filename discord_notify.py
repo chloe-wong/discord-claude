@@ -69,6 +69,7 @@ def discord_request(path, token, body):
         headers={
             "Authorization": f"Bot {token}",
             "Content-Type": "application/json",
+            "User-Agent": "DiscordBot (https://github.com/chloe-wong/discord-claude, 1.0)",
         },
         method="POST",
     )
