@@ -89,10 +89,15 @@ echo '{"cwd":"'"$PWD"'","session_id":"test1234","last_assistant_message":"hello 
   | DISCORD_BOT_TOKEN=$DISCORD_BOT_TOKEN DISCORD_USER_ID=$DISCORD_USER_ID python3 discord_notify.py
 ```
 
-You should get a DM. If nothing arrives, run it without piping to `python3
--c` suppression and check stderr -- the script logs failures there (bad
-token, bot not sharing a server with you, etc.) and always exits 0 so it
-never blocks a real Claude Code session.
+Run this from inside `~/Desktop/discord-claude` (it needs to be in the same
+directory as `discord_notify.py`, or point python3 at the full path). You
+should get a DM within a couple seconds, and no output in the terminal.
+
+If nothing arrives, the terminal *will* show a `[discord-notify] ...` line
+on stderr explaining why (bad token, bot not sharing a server with you,
+invalid user ID, etc.) -- the script always exits 0 so it never blocks a
+real Claude Code session, but it still logs failures to stderr, which
+prints directly to your terminal in this command since nothing redirects it.
 
 ## Notes
 
