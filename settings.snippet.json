@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 $HOME/Desktop/discord-claude/discord_notify.py"
+          }
+        ]
+      }
+    ]
+  }
+}
